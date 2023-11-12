@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/google", produces = ["application/json"])
-@CrossOrigin(origins = ["http://localhost:3000", "https://vulnerable-application.commanderkowalski.uk"])
+@CrossOrigin(origins = ["http://localhost:3000", "https://vulnerable-application.commanderkowalski.uk", "https://vulnerable-application-fe.vercel.app"])
 class GoogleSearchController(
     private val googleSearchService: GoogleSearchService,
 ) {
