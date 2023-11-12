@@ -18,8 +18,12 @@ class GoogleSearchService(private val googleSearchRepository: GoogleSearchReposi
         }
     }
 
-    fun getGoogleSearchById(id: Int) = googleSearchRepository.findGoogleSearchDAOById(id)
-
-    fun addGoogleSearch(searchDAO: GoogleSearchDAO): GoogleSearchDAO = googleSearchRepository.save(searchDAO)
+    fun addGoogleSearch(vulnerable: Boolean, searchDAO: GoogleSearchDAO): GoogleSearchDAO {
+        if (!vulnerable) {
+            val regex = Regex("^[a-zA-Z0-9]+$")
+            require(searchDAO.searchText?.matches(regex) == true) { "Invalid search text" }
+        }
+        return googleSearchRepository.save(searchDAO)
+    }
 
 }

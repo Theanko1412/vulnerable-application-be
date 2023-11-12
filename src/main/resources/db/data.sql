@@ -16,3 +16,5 @@ INSERT INTO google_search (id, search_text) VALUES
 (1, 'Bubamara'),
 (2, 'Mandarina'),
 (3, 'Lazna poruka<strong style="color: red;">This is a demonstration of an XSS attack.</strong>');
+
+SELECT setval('google_search_seq', 3, true);

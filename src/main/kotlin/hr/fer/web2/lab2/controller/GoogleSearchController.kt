@@ -25,13 +25,11 @@ class GoogleSearchController(
         return googleSearchService.getAllGoogleSearches(vulnerable)
     }
 
-    @GetMapping("/{id}")
-    fun getGoogleSearch(@PathVariable id: Int) : GoogleSearchDAO? {
-        return googleSearchService.getGoogleSearchById(id)
-    }
-
     @PostMapping
-    fun addGoogleSearch(@RequestBody search: String) : GoogleSearchDAO {
-        return googleSearchService.addGoogleSearch(GoogleSearchDAO(searchText = search))
+    fun addGoogleSearch(
+        @RequestBody search: String,
+        @RequestParam(required = false, defaultValue = "false") vulnerable: Boolean
+    ) : GoogleSearchDAO {
+        return googleSearchService.addGoogleSearch(vulnerable, GoogleSearchDAO(searchText = search))
     }
 }
