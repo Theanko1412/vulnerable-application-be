@@ -17,7 +17,7 @@ class BankUserController(
 ) {
 
     @GetMapping
-    @CrossOrigin(origins = ["http://localhost:3000", "https://vulnerable-application.commanderkowalski.uk", "https://vulnerable-application-fe.vercel.app"])
+    @CrossOrigin(origins = ["http://localhost:3000", "https://vulnerable-application-fe.vercel.app"])
     fun getUser(
         @RequestParam(required = false, defaultValue = "false") vulnerable: Boolean
     ): ResponseEntity<Any> {

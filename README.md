@@ -11,6 +11,7 @@ Build application jar with gradle bootJar task.
 
 Run docker-compose to start application and database.
 ```bash
+cd support/docker/vulnerable-application-be
 docker-compose up
 ```
 
