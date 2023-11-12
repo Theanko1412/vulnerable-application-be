@@ -1,4 +1,5 @@
 .idea
+.idea/**/*
 
 /support/docker/vulnerable-application-be/postgres-data/**/**
 
