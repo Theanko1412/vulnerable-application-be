@@ -26,3 +26,6 @@ Fix for this vulnerability is implemented so the client recieves only the data i
 Additionally, sensitive data in db should always be encrypted, for easier implementation data is kept in plain text.
 #### Cross-Site Scripting 
 Cross-Site Scripting vulnerability is implemented by not sanitizing user input. User input is directly saved in db/returned in the response without any sanitization. Toggling vulnerability on and off enables/disables regex validation.
+
+### Frontend repo
+[link](https://github.com/Theanko1412/vulnerable-application-fe)
